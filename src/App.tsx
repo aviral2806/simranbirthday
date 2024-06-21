@@ -22,12 +22,10 @@ function App() {
     "https://sndup.net/gym2k/d",
   ];
 
-  const handleSlideChange = (currentSlide) => {
-    console.log("Current slide index:", currentSlide);
-    audioref.current.src = audioSrc[currentSlide];
-    console.log(audioref.current.src);
+  const handleSlideChange = (currentSlide: number) => {
+    audioref.current!.src = audioSrc[currentSlide];
   };
-  const audioref = useRef(null);
+  const audioref = useRef<HTMLAudioElement | null>(null);
 
   const Mycarousel = () => {
     return (
